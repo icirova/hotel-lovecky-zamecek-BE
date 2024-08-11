@@ -1,0 +1,17 @@
+services:
+  zamecek-be:
+    build: .
+    ports:
+      - 4000:4000
+    links:
+      - db
+    
+  db:
+   build: 
+    context: .
+    dockerfile: ./db/Dockerfile.db
+   restart: always
+   environment:
+    POSTGRES_PASSWORD: lovecPg
+    POSTGRES_DB: lovecky-zamecek
+    POSTGRES_USER: lovec

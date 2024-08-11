@@ -2,8 +2,13 @@ FROM node
 
 WORKDIR /app
 # Kopirovani vseho do složky /app 
-COPY * /app
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+COPY . .
 
 RUN npm install
 
-CMD npm run
+EXPOSE 4000
+
+CMD npm run run
