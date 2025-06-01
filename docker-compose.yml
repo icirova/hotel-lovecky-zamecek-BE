@@ -1,10 +1,27 @@
 version: '3.8'
 
 services:
+  zamecek-fe:
+    image: icirova/hotel-lovecky-zamecek:latest
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - API_BASE_URL=http://zamecek-be:4000
+    depends_on:
+      - db
+      - zamecek-be
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   zamecek-be:
     build: .
     ports:
       - "${PORT:-4000}:4000"
+    hostname: zamecek-be
     depends_on:
       - db
     environment:

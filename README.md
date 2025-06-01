@@ -64,11 +64,13 @@ This project uses GitHub Actions for continuous integration and delivery:
 
 1. **Automated Builds**: Every push to the main branch and pull request triggers a build.
 2. **Testing**: The workflow installs dependencies and runs linting checks.
-3. **Docker Image**: On successful merge to main, a Docker image is built and published to Docker Hub.
+3. **Docker Images**: On successful merge to main, both the backend API and database Docker images are built for multiple architectures (amd64 and arm64) and published to Docker Hub.
 
-#### Using the Published Docker Image
+#### Using the Published Docker Images
 
-You can pull the latest image from Docker Hub:
+##### Backend API Image
+
+You can pull the latest backend API image from Docker Hub:
 
 ```bash
 docker pull [username]/hotel-lovecky-zamecek-be:latest
@@ -80,11 +82,31 @@ Run the container:
 docker run -p 4000:4000 --env-file .env [username]/hotel-lovecky-zamecek-be:latest
 ```
 
+##### Database Image
+
+You can pull the latest database image from Docker Hub:
+
+```bash
+docker pull [username]/hotel-lovecky-zamecek-db:latest
+```
+
+Run the database container:
+
+```bash
+docker run -p 5432:5432 -e POSTGRES_PASSWORD=yourpassword [username]/hotel-lovecky-zamecek-db:latest
+```
+
 #### Available Tags
 
 - `latest`: Most recent build from the main branch
 - `[sha]`: Specific commit build (short SHA)
 - Version tags when releases are created
+
+#### Architecture Support
+
+Both Docker images support multiple architectures:
+- `linux/amd64`: For Intel/AMD 64-bit processors
+- `linux/arm64`: For ARM 64-bit processors (e.g., Apple Silicon, AWS Graviton)
 
 ## API Endpoints
 
