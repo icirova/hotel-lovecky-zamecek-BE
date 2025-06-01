@@ -58,6 +58,34 @@ This is the backend API for the Hotel Lovecky Zamecek website. It provides endpo
    docker-compose up -d
    ```
 
+### CI/CD Pipeline
+
+This project uses GitHub Actions for continuous integration and delivery:
+
+1. **Automated Builds**: Every push to the main branch and pull request triggers a build.
+2. **Testing**: The workflow installs dependencies and runs linting checks.
+3. **Docker Image**: On successful merge to main, a Docker image is built and published to Docker Hub.
+
+#### Using the Published Docker Image
+
+You can pull the latest image from Docker Hub:
+
+```bash
+docker pull [username]/hotel-lovecky-zamecek-be:latest
+```
+
+Run the container:
+
+```bash
+docker run -p 4000:4000 --env-file .env [username]/hotel-lovecky-zamecek-be:latest
+```
+
+#### Available Tags
+
+- `latest`: Most recent build from the main branch
+- `[sha]`: Specific commit build (short SHA)
+- Version tags when releases are created
+
 ## API Endpoints
 
 - `GET /` - API status check
@@ -73,6 +101,9 @@ See `.env.example` for all available configuration options.
 
 ```
 hotel-lovecky-zamecek-BE/
+├── .github/             # GitHub configuration
+│   └── workflows/       # GitHub Actions workflows
+│       └── main.yml     # CI/CD pipeline configuration
 ├── db/                  # Database scripts and configuration
 ├── src/                 # Source code
 │   ├── apartments/      # Apartments/rooms related code
