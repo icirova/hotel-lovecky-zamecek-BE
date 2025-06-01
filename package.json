@@ -1,18 +1,30 @@
 {
   "name": "hotel-lovecky-zamecek-be",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend API for Hotel Lovecky Zamecek website",
   "main": "app.js",
   "type": "module",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node app.js"
+    "lint": "echo \"No linting configured\""
   },
-  "author": "",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Hotel Lovecky Zamecek Team",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.0",
     "postgres": "^3.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }

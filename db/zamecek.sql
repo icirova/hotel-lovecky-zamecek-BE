@@ -1,5 +1,5 @@
 --
--- PostgreSQL database dump
+-- lovecQL database dump
 --
 
 -- Dumped from database version 16.0
@@ -24,7 +24,7 @@ SET default_table_access_method = heap;
 
 --
 -- TOC entry 220 (class 1259 OID 16726)
--- Name: apartments; Type: TABLE; Schema: public; Owner: postgres
+-- Name: apartments; Type: TABLE; Schema: public; Owner: lovec
 --
 
 CREATE TABLE public.apartments (
@@ -37,11 +37,11 @@ CREATE TABLE public.apartments (
 );
 
 
-ALTER TABLE public.apartments OWNER TO postgres;
+ALTER TABLE public.apartments OWNER TO lovec;
 
 --
 -- TOC entry 219 (class 1259 OID 16725)
--- Name: apartments_apartments_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: apartments_apartments_id_seq; Type: SEQUENCE; Schema: public; Owner: lovec
 --
 
 ALTER TABLE public.apartments ALTER COLUMN apartments_id ADD GENERATED ALWAYS AS IDENTITY (
@@ -56,7 +56,7 @@ ALTER TABLE public.apartments ALTER COLUMN apartments_id ADD GENERATED ALWAYS AS
 
 --
 -- TOC entry 218 (class 1259 OID 16720)
--- Name: drinks; Type: TABLE; Schema: public; Owner: postgres
+-- Name: drinks; Type: TABLE; Schema: public; Owner: lovec
 --
 
 CREATE TABLE public.drinks (
@@ -67,11 +67,11 @@ CREATE TABLE public.drinks (
 );
 
 
-ALTER TABLE public.drinks OWNER TO postgres;
+ALTER TABLE public.drinks OWNER TO lovec;
 
 --
 -- TOC entry 217 (class 1259 OID 16719)
--- Name: drinks_drinks_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: drinks_drinks_id_seq; Type: SEQUENCE; Schema: public; Owner: lovec
 --
 
 ALTER TABLE public.drinks ALTER COLUMN drinks_id ADD GENERATED ALWAYS AS IDENTITY (
@@ -86,7 +86,7 @@ ALTER TABLE public.drinks ALTER COLUMN drinks_id ADD GENERATED ALWAYS AS IDENTIT
 
 --
 -- TOC entry 216 (class 1259 OID 16714)
--- Name: menu; Type: TABLE; Schema: public; Owner: postgres
+-- Name: menu; Type: TABLE; Schema: public; Owner: lovec
 --
 
 CREATE TABLE public.menu (
@@ -97,11 +97,11 @@ CREATE TABLE public.menu (
 );
 
 
-ALTER TABLE public.menu OWNER TO postgres;
+ALTER TABLE public.menu OWNER TO lovec;
 
 --
 -- TOC entry 215 (class 1259 OID 16713)
--- Name: menu_menu_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: menu_menu_id_seq; Type: SEQUENCE; Schema: public; Owner: lovec
 --
 
 ALTER TABLE public.menu ALTER COLUMN menu_id ADD GENERATED ALWAYS AS IDENTITY (
@@ -117,7 +117,7 @@ ALTER TABLE public.menu ALTER COLUMN menu_id ADD GENERATED ALWAYS AS IDENTITY (
 --
 -- TOC entry 4852 (class 0 OID 16726)
 -- Dependencies: 220
--- Data for Name: apartments; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: apartments; Type: TABLE DATA; Schema: public; Owner: lovec
 --
 
 INSERT INTO public.apartments OVERRIDING SYSTEM VALUE VALUES (1, 'Vévodův apartmán', 2500, 'Vítejte ve Vévodově apartmánu, korunovovaném jako vrchol luxusu a pohodlí v našem hotelu. S rozlohou dostatečnou pro královskou rodinu, přináší tento apartmán nezaměnitelný zážitek pro náročné hosty. Vévodův apartmán nabízí dokonalou harmonii mezi moderním luxusem a historickým šarmem loveckého zámečku.', 9, 'vevoduv.webp');
@@ -129,7 +129,7 @@ INSERT INTO public.apartments OVERRIDING SYSTEM VALUE VALUES (4, 'Lesní apartm�
 --
 -- TOC entry 4850 (class 0 OID 16720)
 -- Dependencies: 218
--- Data for Name: drinks; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: drinks; Type: TABLE DATA; Schema: public; Owner: lovec
 --
 
 INSERT INTO public.drinks OVERRIDING SYSTEM VALUE VALUES (1, 'Čaj černý', 'hot
@@ -149,7 +149,7 @@ INSERT INTO public.drinks OVERRIDING SYSTEM VALUE VALUES (11, 'Domácí limonád
 --
 -- TOC entry 4848 (class 0 OID 16714)
 -- Dependencies: 216
--- Data for Name: menu; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: menu; Type: TABLE DATA; Schema: public; Owner: lovec
 --
 
 INSERT INTO public.menu OVERRIDING SYSTEM VALUE VALUES (1, 'Kančí burger s brusinkami', 'lunch', 250);
@@ -165,7 +165,7 @@ INSERT INTO public.menu OVERRIDING SYSTEM VALUE VALUES (4, 'Bažantí stehna se 
 --
 -- TOC entry 4861 (class 0 OID 0)
 -- Dependencies: 219
--- Name: apartments_apartments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: apartments_apartments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lovec
 --
 
 SELECT pg_catalog.setval('public.apartments_apartments_id_seq', 4, true);
@@ -174,7 +174,7 @@ SELECT pg_catalog.setval('public.apartments_apartments_id_seq', 4, true);
 --
 -- TOC entry 4862 (class 0 OID 0)
 -- Dependencies: 217
--- Name: drinks_drinks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: drinks_drinks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lovec
 --
 
 SELECT pg_catalog.setval('public.drinks_drinks_id_seq', 11, true);
@@ -183,7 +183,7 @@ SELECT pg_catalog.setval('public.drinks_drinks_id_seq', 11, true);
 --
 -- TOC entry 4863 (class 0 OID 0)
 -- Dependencies: 215
--- Name: menu_menu_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: menu_menu_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lovec
 --
 
 SELECT pg_catalog.setval('public.menu_menu_id_seq', 8, true);
@@ -191,7 +191,7 @@ SELECT pg_catalog.setval('public.menu_menu_id_seq', 8, true);
 
 --
 -- TOC entry 4703 (class 2606 OID 16732)
--- Name: apartments apartments_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: apartments apartments_pkey; Type: CONSTRAINT; Schema: public; Owner: lovec
 --
 
 ALTER TABLE ONLY public.apartments
@@ -200,7 +200,7 @@ ALTER TABLE ONLY public.apartments
 
 --
 -- TOC entry 4701 (class 2606 OID 16724)
--- Name: drinks drinks_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: drinks drinks_pkey; Type: CONSTRAINT; Schema: public; Owner: lovec
 --
 
 ALTER TABLE ONLY public.drinks
@@ -209,7 +209,7 @@ ALTER TABLE ONLY public.drinks
 
 --
 -- TOC entry 4699 (class 2606 OID 16718)
--- Name: menu menu_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: menu menu_pkey; Type: CONSTRAINT; Schema: public; Owner: lovec
 --
 
 ALTER TABLE ONLY public.menu
@@ -219,7 +219,7 @@ ALTER TABLE ONLY public.menu
 --
 -- TOC entry 4858 (class 0 OID 0)
 -- Dependencies: 220
--- Name: TABLE apartments; Type: ACL; Schema: public; Owner: postgres
+-- Name: TABLE apartments; Type: ACL; Schema: public; Owner: lovec
 --
 
 GRANT ALL ON TABLE public.apartments TO lovec;
@@ -228,7 +228,7 @@ GRANT ALL ON TABLE public.apartments TO lovec;
 --
 -- TOC entry 4859 (class 0 OID 0)
 -- Dependencies: 218
--- Name: TABLE drinks; Type: ACL; Schema: public; Owner: postgres
+-- Name: TABLE drinks; Type: ACL; Schema: public; Owner: lovec
 --
 
 GRANT ALL ON TABLE public.drinks TO lovec;
@@ -237,7 +237,7 @@ GRANT ALL ON TABLE public.drinks TO lovec;
 --
 -- TOC entry 4860 (class 0 OID 0)
 -- Dependencies: 216
--- Name: TABLE menu; Type: ACL; Schema: public; Owner: postgres
+-- Name: TABLE menu; Type: ACL; Schema: public; Owner: lovec
 --
 
 GRANT ALL ON TABLE public.menu TO lovec;
@@ -246,6 +246,6 @@ GRANT ALL ON TABLE public.menu TO lovec;
 -- Completed on 2024-08-11 15:07:51
 
 --
--- PostgreSQL database dump complete
+-- lovecQL database dump complete
 --
 
