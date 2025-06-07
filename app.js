@@ -110,7 +110,7 @@ app.use((req, res) => {
 // Error handling middleware should be last
 app.use(errorHandler);
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Server running on port http://localhost:${port}`);
 });
 
