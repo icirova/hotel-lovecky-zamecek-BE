@@ -119,6 +119,22 @@ Both Docker images support multiple architectures:
 
 See `.env.example` for all available configuration options.
 
+### CORS
+
+Backend allows only origins from `ALLOWED_ORIGINS` or `CORS_ORIGINS`.
+
+Example:
+
+```env
+ALLOWED_ORIGINS=https://zamecek.cirova.cz,http://localhost:3000,http://localhost:5173
+```
+
+Notes:
+
+- Origin matching is strict and does not use wildcards.
+- If neither variable is set, a safe default whitelist is used in [app.js](./app.js).
+- Requests without an `Origin` header are still allowed, so server-to-server calls and local diagnostics keep working.
+
 ## Project Structure
 
 ```
